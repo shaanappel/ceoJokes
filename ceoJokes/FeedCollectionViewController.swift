@@ -11,8 +11,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FeedCollectionViewController: UICollectionViewController {
-    var names = ["Steve Jobs", "Tim Cook", "Bill Gates", "Larry Page", "Satya Nadella", "Mark Zuckerberg"]
-    var productsAry = [["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"]]
+    var names = ["Steve Jobs", "Tim Cook", "Bill Gates", "Larry Page", "Satya Nadella", "Michael S. Dell"]
+    var productsAry = [["iphone", "ipad", "itouch", "ipod"], ["iphone", "ipad", "itouch", "ipod"], ["surface", "xbox", "nokia"], ["car", "cardboard", "glass"], ["surface", "xbox", "nokia"], ["desktop", "TV", "alienware"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()

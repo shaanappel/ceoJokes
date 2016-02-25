@@ -47,6 +47,18 @@ class ProductsTableViewController: UITableViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToImage"{
+            let vc = segue.destinationViewController as! ProductImageViewController
+            let row = (sender as! NSIndexPath).item
+            let Name = productNames[row]
+            vc.imageName = Name as! String
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("ToImage", sender: indexPath)
+    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
