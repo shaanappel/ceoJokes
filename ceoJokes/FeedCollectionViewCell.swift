@@ -16,6 +16,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ceoName: UILabel!
     
     @IBOutlet weak var ceoJokeLabel: UILabel!
-    
+
     
 }

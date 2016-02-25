@@ -13,10 +13,12 @@ private let reuseIdentifier = "Cell"
 class FeedCollectionViewController: UICollectionViewController {
     var names = ["Steve Jobs", "Tim Cook", "Bill Gates", "Larry Page", "Satya Nadella", "Michael S. Dell"]
     var productsAry = [["iphone", "ipad", "itouch", "ipod"], ["iphone", "ipad", "itouch", "ipod"], ["surface", "xbox", "nokia"], ["car", "cardboard", "glass"], ["surface", "xbox", "nokia"], ["desktop", "TV", "alienware"]]
+    var jokes = ["How many programmers does it take to change a light bulb? None. It's a hardware problem.", "A programmer is at work when his wife calls and asks him to go to the store. She says she needs a gallon of milk, and if they have fresh eggs, buy a dozen. He comes home with 12 gallons of milk.", "I would tell you a UDP joke, but you might not get it.", "If you put a million monkeys at a million keyboards, one of them will eventually write a Java program. The rest of them will all write Perl programs.", "What do you call 8 Hobbits? A Hobbyte.", "Why aren't jokes funny in octal? Because seven ten eleven."]
+    var prof_images = ["steve_jobs", "tim_cook", "bill_gates-1", "larry_page-1", "satya_nadella", "michael_dell"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.yellowColor()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,8 +61,14 @@ class FeedCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         cell.ceoName.text = names[indexPath.item];
-        cell.ceoImage.image = UIImage(named: "blank_profile_pic")
-        cell.ceoJokeLabel.text = names[indexPath.item];
+        cell.ceoJokeLabel.text = jokes[indexPath.item];
+        
+        let image = UIImage(named: prof_images[indexPath.item])
+        cell.ceoImage.layer.borderWidth = 1
+        cell.ceoImage.layer.borderColor = UIColor.blackColor().CGColor
+        cell.ceoImage.layer.cornerRadius = cell.ceoImage.frame.height/2
+        cell.ceoImage.clipsToBounds = true
+        cell.ceoImage.image = image
         
         
         return cell
