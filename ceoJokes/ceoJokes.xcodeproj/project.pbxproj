@@ -19,6 +19,7 @@
 		FC2FFD6E1C7D7D980095D542 /* FeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2FFD6D1C7D7D980095D542 /* FeedCollectionViewController.swift */; };
 		FC2FFD701C7D7DA50095D542 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2FFD6F1C7D7DA50095D542 /* FeedCollectionViewCell.swift */; };
 		FC2FFD721C7D83360095D542 /* blank_profile_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2FFD711C7D83360095D542 /* blank_profile_pic.png */; };
+		FC36A7E61C7E9418005BF9B7 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36A7E51C7E9418005BF9B7 /* ProductImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FC2FFD6D1C7D7D980095D542 /* FeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCollectionViewController.swift; path = ../FeedCollectionViewController.swift; sourceTree = "<group>"; };
 		FC2FFD6F1C7D7DA50095D542 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCollectionViewCell.swift; path = ../FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC2FFD711C7D83360095D542 /* blank_profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank_profile_pic.png; sourceTree = "<group>"; };
+		FC36A7E51C7E9418005BF9B7 /* ProductImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				FC2FFD371C7D7BC30095D542 /* AppDelegate.swift */,
 				FC2FFD391C7D7BC30095D542 /* ViewController.swift */,
 				FC2FFD3B1C7D7BC30095D542 /* Main.storyboard */,
+				FC36A7E51C7E9418005BF9B7 /* ProductImageViewController.swift */,
 				FC2FFD691C7D7D0D0095D542 /* ProductsTableViewController.swift */,
 				FC2FFD6B1C7D7D1C0095D542 /* ProductsTableViewCell.swift */,
 				FC2FFD3E1C7D7BC30095D542 /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				FC2FFD6E1C7D7D980095D542 /* FeedCollectionViewController.swift in Sources */,
 				FC2FFD701C7D7DA50095D542 /* FeedCollectionViewCell.swift in Sources */,
 				FC2FFD381C7D7BC30095D542 /* AppDelegate.swift in Sources */,
+				FC36A7E61C7E9418005BF9B7 /* ProductImageViewController.swift in Sources */,
 				FC2FFD6C1C7D7D1C0095D542 /* ProductsTableViewCell.swift in Sources */,
 				FC2FFD6A1C7D7D0D0095D542 /* ProductsTableViewController.swift in Sources */,
 			);
