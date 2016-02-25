@@ -13,10 +13,11 @@ private let reuseIdentifier = "Cell"
 class FeedCollectionViewController: UICollectionViewController {
     var names = ["Steve Jobs", "Tim Cook", "Bill Gates", "Larry Page", "Satya Nadella", "Mark Zuckerberg"]
     var productsAry = [["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"], ["iphone", "ipad", "iphone", "ipad"]]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219.0/255.0, alpha: 1.0)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,8 +62,9 @@ class FeedCollectionViewController: UICollectionViewController {
         cell.ceoName.text = names[indexPath.item];
         cell.ceoImage.image = UIImage(named: "blank_profile_pic")
         cell.ceoJokeLabel.text = names[indexPath.item];
-        
-        
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.layer.cornerRadius = 5
+
         return cell
     }
     
