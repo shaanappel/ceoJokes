@@ -69,6 +69,8 @@ class FeedCollectionViewController: UICollectionViewController {
         cell.ceoImage.layer.cornerRadius = cell.ceoImage.frame.height/2
         cell.ceoImage.clipsToBounds = true
         cell.ceoImage.image = image
+        cell.ceoImage.accessibilityIdentifier = prof_images[indexPath.item]
+        print(cell.ceoImage.accessibilityIdentifier)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "imageTapped:")
 
@@ -87,7 +89,9 @@ class FeedCollectionViewController: UICollectionViewController {
             //Send to URL
             print("tapped! right here!")
             for(var i = 0; i < prof_images.count; i++) {
-                if picture.image == UIImage(named:prof_images[i]) {
+                print(picture.accessibilityIdentifier)
+                print(prof_images[i])
+                if picture.accessibilityIdentifier == prof_images[i] {
                     print(prof_images[i])
                     if let url = NSURL(string: img_urls[i]) {
                         UIApplication.sharedApplication().openURL(url)
