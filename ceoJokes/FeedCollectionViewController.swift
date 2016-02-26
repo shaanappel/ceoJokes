@@ -16,19 +16,19 @@ class FeedCollectionViewController: UICollectionViewController {
     var productsAry = [["iphone", "ipad", "itouch", "ipod"], ["iphone", "ipad", "itouch", "ipod"], ["surface", "xbox", "nokia"], ["car", "cardboard", "glass"], ["surface", "xbox", "nokia"], ["desktop", "TV", "alienware"]]
     var jokes = ["How many programmers does it take to change a light bulb? None. It's a hardware problem.", "A programmer is at work when his wife calls and asks him to go to the store. She says she needs a gallon of milk, and if they have fresh eggs, buy a dozen. He comes home with 12 gallons of milk.", "I would tell you a UDP joke, but you might not get it.", "If you put a million monkeys at a million keyboards, one of them will eventually write a Java program. The rest of them will all write Perl programs.", "What do you call 8 Hobbits? A Hobbyte.", "Why aren't jokes funny in octal? Because seven ten eleven."]
     var prof_images = ["steve_jobs", "tim_cook", "bill_gates-1", "larry_page-1", "satya_nadella", "michael_dell"]
+    var img_urls = ["https://en.wikipedia.org/wiki/Steve_Jobs", "https://en.wikipedia.org/wiki/Tim_Cook", "https://en.wikipedia.org/wiki/Bill_Gates", "https://en.wikipedia.org/wiki/Larry_Page", "https://en.wikipedia.org/wiki/Satya_Nadella", "https://en.wikipedia.org/wiki/Michael_Dell"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219.0/255.0, alpha: 1.0)
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -57,10 +57,12 @@ class FeedCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         cell.ceoName.text = names[indexPath.item];
+        cell.ceoName.textColor = UIColor(red: 52.0/255.0, green: 73.0/255.0, blue: 94.0/255.0, alpha: 1.0)
         cell.backgroundColor = UIColor.whiteColor()
         cell.layer.cornerRadius = 5
         cell.ceoJokeLabel.text = jokes[indexPath.item];
-        
+        cell.ceoJokeLabel.textColor = UIColor(red: 52.0/255.0, green: 73.0/255.0, blue: 94.0/255.0, alpha: 1.0)
+    
         let image = UIImage(named: prof_images[indexPath.item])
         cell.ceoImage.layer.borderWidth = 1
         cell.ceoImage.layer.borderColor = UIColor.blackColor().CGColor
@@ -68,8 +70,31 @@ class FeedCollectionViewController: UICollectionViewController {
         cell.ceoImage.clipsToBounds = true
         cell.ceoImage.image = image
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: "imageTapped:")
+
+        // add it to the image view;
+        cell.ceoImage.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        cell.ceoImage.userInteractionEnabled = true
         
         return cell
+    }
+    
+    func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        
+        if let picture = gesture.view as? UIImageView {
+            //Send to URL
+            print("tapped! right here!")
+            for(var i = 0; i < prof_images.count; i++) {
+                if picture.image == UIImage(named:prof_images[i]) {
+                    print(prof_images[i])
+                    if let url = NSURL(string: img_urls[i]) {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
+                }
+            }
+        }
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
